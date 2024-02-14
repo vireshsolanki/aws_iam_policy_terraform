@@ -1,6 +1,8 @@
 module "iam-policy" {
     source = "../modules/iam-policy"
     name = var.name
+    instance-type = var.instance-type
+    region = var.region
 }
 module "iam-role" {
     source = "../modules/iam-role"

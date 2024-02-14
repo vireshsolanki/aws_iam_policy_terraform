@@ -13,7 +13,7 @@ resource "aws_iam_policy" "ec2-access" {
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"aws:RequestedRegion": "ap-southeast-1"
+					"aws:RequestedRegion": "${var.region}"
 				}
 			}
 		},
@@ -43,7 +43,7 @@ resource "aws_iam_policy" "ec2-access" {
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"aws:RequestedRegion": "ap-southeast-1"
+					"aws:RequestedRegion": "${var.region}"
 				}
 			}
 		},
@@ -54,7 +54,7 @@ resource "aws_iam_policy" "ec2-access" {
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"aws:RequestedRegion": "ap-southeast-1"
+					"aws:RequestedRegion": "${var.region}"
 				}
 			}
 		},
@@ -65,7 +65,7 @@ resource "aws_iam_policy" "ec2-access" {
 			"Resource": "*",
 			"Condition": {
 				"ForAnyValue:StringNotEquals": {
-					"ec2:InstanceType": "t2.micro"
+					"ec2:InstanceType": "${var.instance-type}"
 				}
 			}
 		}
